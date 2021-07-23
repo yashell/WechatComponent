@@ -1,0 +1,50 @@
+<view class="album" wx:if="{{mode !== 'premit'}}">
+  <li wx:for="{{urlsList}}" wx:key="index" wx:if="{{index < 6 || mode === 'edit'}}">
+    <view wx:if="{{index === 5 && urlsList.length !==6 && mode === 'preview'}}" class="more" bindtap="previewImage" data-item="{{item}}">
+      +{{urlsList.length - 6}}</view>
+    <image wx:if="{{deleteBtn}}" class="det" src="../assets/images/delete.png" mode="aspectFill" bindtap="deleteImage"
+      data-index="{{index}}" />
+    <image class="tip" src="{{item + '?width=200&height=200'}}" mode="aspectFill" bindtap="previewImage"
+      data-item="{{item}}" />
+  </li>
+  <li class="chooseImage" bindtap="chooseImage" wx:if="{{urlsList.length < max && mode === 'edit'}}">
+    <label>+</label>
+    <span>点击上传</span>
+  </li>
+</view>
+
+<view wx:if="{{mode === 'premit'}}" class="albumPremit">
+  <view wx:if="{{urlsList.length > 0}}" >
+    <image wx:if="{{deleteBtn}}" class="det" src="../assets/images/delete.png" mode="aspectFill" bindtap="deleteImage"
+      data-index="{{index}}" />
+    <image wx:for="{{urlsList}}" wx:key="index" wx:if="{{index === 0}}" class="tip" src="{{item + '?width=200&height=200'}}" mode="aspectFill" bindtap="previewImage" data-item="{{item}}" />
+  </view>
+  <view  wx:if="{{urlsList.length=== 0}}"  bindtap="chooseImage">
+    <view class="premitText">
+      <text>+</text>
+      <text>{{uploadText}}</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="progress" wx:if="{{progressShow}}">
+  <view class="bg"></view>
+  <dl>
+    <dt>
+      <image src="../assets/images/upload_bg.png" mode="widthFix" />
+    </dt>
+    <dd>
+      <view class="details">
+        <text class="te">上传进度（{{currentUploadProgress}}%）</text>
+        <text class="te">共{{currentUploadPaths.length}}张</text>
+      </view>
+      <view class="strip">
+        <view class="stripbg" style="width: {{currentUploadProgress}}%"></view>
+      </view>
+      <button class="btn {{failNum > 0 ? 'err' : ''}}" bindtap="taskAbort">取消上传</button>
+    </dd>
+
+  </dl>
+
+</view>

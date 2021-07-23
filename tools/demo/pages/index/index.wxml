@@ -1,0 +1,17 @@
+<view>相册 </view>
+<Album multiple="{{9}}" deleteBtn="{{true}}" urls="{{picList}}" max="{{50}}" bindevent="onMyEvent" />
+
+<view>复选框 </view>
+<button bindtap='ActionCheckboxOpen'>点我显示</button>
+<ActionCheckbox show="{{ ActionCheckboxShow }}" source="{{ActionCheckboxSource}}" selected="{{ActionCheckboxSelectedList}}" 
+    title="选择药品包装数量" cancel-text="确认" bindevent="ActionCheckboxSelectEvent" bindcloseEvent="ActionCheckboxClose" />
+
+<view>单选 </view>    
+<button bindtap='actionsheetOpen'>点我显示</button>
+
+<ActionSheet bindactiontap="btnClick" show="{{actionsheetShow}}" actions="{{actionsheetGroups}}" title="这是一个标题，可以为一行或者两行。">
+</ActionSheet>
+
+
+<!-- <view>浮动按钮 </view> -->
+<FloatButton inButtonRight="{{ 120 }}" inButtonBottom="{{ 260 }}" bindtap='aa'/>

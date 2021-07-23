@@ -1,0 +1,38 @@
+.btn-Suspension {
+  pointer-events: auto;
+  width: 90rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0px 3rpx 14rpx 0px rgba(0, 160, 84, 0.18);
+  z-index: 30;
+  user-select: none;   
+}
+.btn-Suspension.hide {
+    opacity: 0;
+}
+
+
+
+.btn-Suspension .iconfont {
+  font-size: 50rpx;
+  color: #fff;
+}
+
+.movable-area {
+  pointer-events: none; 
+  z-index: 110;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.movable-add{
+  line-height: 150%;
+  font-size: 45rpx;
+}

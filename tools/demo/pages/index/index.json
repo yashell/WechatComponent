@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Album": "/components/Album/Album",
+    "ActionCheckbox": "/components/ActionCheckbox/ActionCheckbox",
+    "ActionSheet": "/components/ActionSheet/ActionSheet",
+    "FloatButton": "/components/FloatButton/FloatButton"
+  }
+}

@@ -1,0 +1,5 @@
+<movable-area class="movable-area">
+   <movable-view damping="60" style="background: {{color}}" class="btn-Suspension {{ hide ? 'hide' : '' }}" x="{{ x }}" y="{{ y }}" bindtap="btnSuspensionClick" direction="all">
+      <view class="movable-add"  style="color: {{textColor}}">+</view>
+   </movable-view>
+</movable-area>

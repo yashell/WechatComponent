@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ActionCheckbox": "./ActionCheckbox/ActionCheckbox",
+    "Album": "./Album/Album"
+  }
+}

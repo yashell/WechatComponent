@@ -1,0 +1,24 @@
+<view class="actionCheckbox" wx:if="{{show}}">
+  <view wx:if="{{overlay}}" class="bg"  bindtap="cancel"/>
+  <view class="box">
+    <view class="title">
+      <text>{{title}}</text>
+      <view class="select-all">
+        <checkbox-group bindchange="selectAllChange">
+        <checkbox checked="{{selectAll}}" value="true"  color="{{color}}" />
+        </checkbox-group>
+        全选
+      </view>
+    </view>
+    <view class="centre">
+      <checkbox-group bindchange="checkboxChange">
+        <view class="unit"  wx:for="{{sourceBase}}" wx:key="index">
+          <text>{{item.value}}</text><checkbox value="{{item.value}}" color="{{color}}" checked="{{item.checked}}"/>
+        </view>
+      </checkbox-group>
+    </view>
+
+    <view class="cancel" bindtap="cancel">{{cancelText}}</view>
+  </view>
+
+</view>

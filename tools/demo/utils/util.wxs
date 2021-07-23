@@ -1,0 +1,166 @@
+var formatTime = function (timestamp) {
+  timestamp = parseInt(timestamp);
+  var date = getDate(timestamp);
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
+var formatTimeMouth = function (timestamp) {
+  timestamp = parseInt(timestamp);
+  var date = getDate(timestamp);
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+
+  return [month, day].map(formatNumber).join('/') + ' ' + [hour, minute].map(formatNumber).join(':')
+}
+
+
+var formatNumber = function (n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+var reCompanyStyle = function (e) {
+  var text = ''
+  if (e) {
+    switch (parseFloat(e)) {
+      case 1:
+        return '溯源企业'
+        break;
+      case 2:
+        return '非溯源企业'
+        break;
+      case 3:
+        return '非溯源个人'
+        break;
+    }
+  }
+  return text
+}
+
+var reOrderStatus = function (type,status) {
+  var text = ''
+  if (status) {
+    switch (parseFloat(status)) {
+      case 2:
+        return '等待对方确认'
+        break;
+      case 3:
+        if(type === "2") {
+          return '已出库'
+        } else {
+          return '已入库'
+        }
+        break;
+      case 4:
+        if(type === "2") {
+          return '对方拒绝接收'
+        } else {
+          return '已拒绝接收'
+        }
+        break;
+      case 5:
+        if(type === "2") {
+          return '已撤回'
+        } else {
+          return '对方已撤回'
+        }
+        break;
+    }
+  }
+  return text
+}
+
+var reTimeName = function (e) {
+  var text = ''
+  if (e) {
+    switch (parseFloat(e)) {
+      case 3:
+        return '交易完成时间'
+        break;
+      case 4:
+        return '对方拒绝接收时间'
+        break;
+      case 5:
+        return '撤回时间'
+        break;
+    }
+  }
+  return text
+
+}
+
+var reTimeName2 = function (e) {
+  var text = ''
+  if (e) {
+    switch (parseFloat(e)) {
+      case 3:
+        return '交易完成时间'
+        break;
+      case 4:
+        return '拒绝接收时间'
+        break;
+      case 5:
+        return '撤回时间'
+        break;
+    }
+  }
+  return text
+
+}
+
+var reOrderStatusColor = function (e) {
+  var text = ''
+  if (e) {
+    switch (parseFloat(e)) {
+      case 2:
+        return '#FDB404'
+        break;
+      case 3:
+        return '#08B060'
+        break;
+      case 4:
+        return '#FDB404'
+        break;
+      case 5:
+        return '#E90707'
+        break;
+    }
+  }
+  return text
+
+}
+
+
+var subDate = function (val) {
+  if (val) {
+    return val.substring(0, 10)
+  } else {
+    return ''
+  }
+}
+
+
+
+
+
+module.exports = {
+  subDate: subDate,
+  formatTime: formatTime,
+  formatTimeMouth: formatTimeMouth,
+  reCompanyStyle: reCompanyStyle,
+  reOrderStatus: reOrderStatus,
+  reOrderStatusColor: reOrderStatusColor,
+  reTimeName: reTimeName,
+  reTimeName2: reTimeName2
+
+}
