@@ -16,6 +16,14 @@ Component({
             type: String,
             value: '#fff'
         },
+        boxShadow: {
+            type: String,
+            value: '#0px 3rpx 14rpx 0px rgba(0, 160, 84, 0.18);'
+        },
+        zIndex: {
+            type: Number,
+            value: 90
+        }
     },
     options: {},
     data: {

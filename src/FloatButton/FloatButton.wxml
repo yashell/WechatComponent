@@ -1,5 +1,6 @@
-<movable-area class="movable-area">
-   <movable-view damping="60" style="background: {{color}}" class="btn-Suspension {{ hide ? 'hide' : '' }}" x="{{ x }}" y="{{ y }}" bindtap="btnSuspensionClick" direction="all">
-      <view class="movable-add"  style="color: {{textColor}}">+</view>
+<movable-area class="movable-area" style="z-index: {{zIndex}}">
+   <movable-view damping="60" style="background: {{color}}; box-shadow: {{boxShadow}}" class="btn-Suspension {{ hide ? 'hide' : '' }}" x="{{ x }}" y="{{ y }}" bindtap="btnSuspensionClick" direction="all">
+      <!-- <view class="movable-add"  style="color: {{textColor}}">+</view> -->
+      <Svg icon="add" size="40rpx" color=" {{textColor}}" />
    </movable-view>
 </movable-area>
